@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FanTake — Digital Merch That Keeps Updating</title>
+<style>
+  :root{--ink:#22182e;--muted:#6b6375;--accent:#7a3fa0;--bg:#faf7f2;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+  main{max-width:880px;margin:0 auto;padding:40px 20px 60px}
+  .eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  h1{font-size:clamp(30px,5vw,44px);margin:6px 0 8px;line-height:1.1}
+  .lede{font-size:18px;color:var(--muted);margin:0 0 28px;max-width:640px}
+  video{width:100%;border-radius:14px;box-shadow:0 8px 30px rgba(34,24,46,.15);background:#000}
+  .cap{font-size:13px;color:var(--muted);margin:8px 2px 28px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  a.card{display:block;background:var(--card);border:1px solid #e8e1d8;border-radius:14px;padding:18px 18px 16px;text-decoration:none;color:inherit;transition:transform .15s,border-color .15s}
+  a.card:hover{transform:translateY(-2px);border-color:var(--accent)}
+  a.card b{display:block;font-size:17px;margin-bottom:4px}
+  a.card span{font-size:14px;color:var(--muted)}
+  a.card.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+  a.card.primary span{color:#eadcf3}
+  footer{margin-top:40px;font-size:13px;color:var(--muted);border-top:1px solid #e8e1d8;padding-top:16px}
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">MAIB7005 · Group 16 · HKU · November 2026</div>
+  <h1>FanTake</h1>
+  <p class="lede">Digital merch that keeps updating: artist studios run 30-day, studio-approved, AI-labelled interactive stories that fans come back to between releases.</p>
+
+  <video controls preload="metadata" playsinline poster="demo/cover.jpg">
+    <source src="demo/FanTake_demo_EN_final.mp4" type="video/mp4">
+    <track kind="subtitles" src="demo/FanTake_demo_EN_final.vtt" srclang="en" label="English" default>
+  </video>
+  <p class="cap">Demo walkthrough, 1:55, with narration and subtitles. Mo is a fictional demo character; the narrator is a synthetic voice.</p>
+
+  <div class="grid">
+    <a class="card primary" href="demo/FanTake_demo_EN.html"><b>Try the clickable demo →</b><span>Runs in your browser with scripted replies. No sign-in.</span></a>
+    <a class="card" href="prototype/Mo_prototype/index_en.html"><b>Mo prototype</b><span>The earlier chat prototype with persona, photos and stickers.</span></a>
+    <a class="card" href="https://github.com/Laura-ZhaoXX/FanTake_UpdatingDigitalMerch"><b>Source on GitHub</b><span>Code, live-mode server and README.</span></a>
+  </div>
+
+  <footer>Demo and prototype: Zhao Xuan · MAIB7005 Advanced Machine Learning final group project, Group 16. The business plan and poster are group work and are not published here.</footer>
+</main>
+</body>
+</html>

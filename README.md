@@ -4,15 +4,18 @@ MAIB7005 Advanced Machine Learning and Deep Learning · Group 16 final project (
 
 **Demo and prototype:** Zhao Xuan
 
+**▶ Open the demo in your browser:** https://laura-zhaoxx.github.io/FanTake_UpdatingDigitalMerch/
+
 FanTake is a B2B2C app concept. Artist studios commission authorised, 30-day interactive stories, and fans chat with an AI character and make choices that shape later chapters. The demo character, Mo, is fictional.
 
 ## Contents
 
 | Folder | What's inside |
 |---|---|
-| `demo/` | `FanTake_demo_EN.html`: the clickable demo. Open it in a browser and it runs offline with scripted replies. `FanTake_demo_EN_final.mp4`: a 1:55 walkthrough with English narration, subtitles and sound effects (subtitles also as `.srt`). `fantake_server.py`: optional live mode. |
+| `demo/` | `FanTake_demo_EN.html`: the clickable demo. Open it in a browser and it runs offline with scripted replies. `FanTake_demo_EN_final.mp4`: a 1:55 walkthrough with English narration, subtitles and sound effects (subtitles also as `.srt` and `.vtt`). `fantake_server.py`: optional live mode. |
 | `prototype/Mo_prototype/` | The earlier Mo chat prototype, with persona, photos, stickers and a live-mode server. |
-| `assets/` | Story images used in the demo and poster. |
+| `assets/` | Story images used in the demo. |
+| `index.html` | Landing page for GitHub Pages: the video, the clickable demo and the prototype. |
 
 ## Run the demo in live mode (optional)
 
