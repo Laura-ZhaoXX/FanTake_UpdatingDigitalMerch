@@ -10,7 +10,7 @@ FanTake is a B2B2C app concept. Artist studios commission authorised, 30-day int
 
 | Folder | What's inside |
 |---|---|
-| `demo/` | `FanTake_demo_EN.html`: the clickable demo. Open it in a browser and it runs offline with scripted replies. `FanTake_demo_EN_narrated.mp4`: a 2:20 walkthrough with English voice-over and subtitles (`.srt` alongside). `FanTake_demo_EN.mp4`: the same video with no sound. `fantake_server.py`: optional live mode. |
+| `demo/` | `FanTake_demo_EN.html`: the clickable demo. Open it in a browser and it runs offline with scripted replies. `FanTake_demo_EN_final.mp4`: a 1:55 walkthrough with English narration, subtitles and sound effects (subtitles also as `.srt`). `fantake_server.py`: optional live mode. |
 | `prototype/Mo_prototype/` | The earlier Mo chat prototype, with persona, photos, stickers and a live-mode server. |
 | `assets/` | Story images used in the demo and poster. |
 
