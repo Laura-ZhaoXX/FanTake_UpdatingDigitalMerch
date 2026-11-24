@@ -1,0 +1,144 @@
+1
+00:00:00,350 --> 00:00:01,411
+FanTake.
+
+2
+00:00:01,447 --> 00:00:03,661
+Digital merch that keeps updating.
+
+3
+00:00:05,350 --> 00:00:08,779
+An artist studio publishes a licensed drop, and Mo,
+
+4
+00:00:08,815 --> 00:00:11,519
+a fictional demo character, opens the chat.
+
+5
+00:00:11,555 --> 00:00:13,619
+He answers each fan in character.
+
+6
+00:00:16,850 --> 00:00:19,063
+Then the fan decides what happens next.
+
+7
+00:00:19,099 --> 00:00:21,334
+Tap a suggestion, or write your own.
+
+8
+00:00:21,370 --> 00:00:23,519
+Here, she asks to stay a little longer.
+
+9
+00:00:23,555 --> 00:00:27,113
+The scene is saved, and the next drop continues from her choice.
+
+10
+00:00:36,350 --> 00:00:38,990
+One drop, a different next scene for each fan,
+
+11
+00:00:39,026 --> 00:00:41,261
+within options the studio approved.
+
+12
+00:00:43,350 --> 00:00:45,969
+Every scene she shapes is kept in her collection.
+
+13
+00:00:46,005 --> 00:00:47,749
+Merch that keeps updating.
+
+14
+00:00:49,850 --> 00:00:51,850
+Mo remembers what each fan said.
+
+15
+00:00:51,886 --> 00:00:55,315
+Tonight, she critiques his recital poster in her own words:
+
+16
+00:00:55,351 --> 00:00:58,781
+the font is tiny, the colours look like expired jelly.
+
+17
+00:00:58,817 --> 00:01:02,011
+He pushes back, and her feedback is saved to memory.
+
+18
+00:01:07,850 --> 00:01:10,981
+Next morning, without being asked, he messages first.
+
+19
+00:01:11,017 --> 00:01:14,041
+He has fixed the poster, denies it was her idea,
+
+20
+00:01:14,077 --> 00:01:16,247
+and still remembers her milk-tea job.
+
+21
+00:01:16,283 --> 00:01:18,881
+These are real replies from the Qwen model.
+
+22
+00:01:18,917 --> 00:01:22,069
+Small achievements and stickers make it a daily habit,
+
+23
+00:01:22,105 --> 00:01:24,510
+and his own life carries on between drops:
+
+24
+00:01:24,546 --> 00:01:27,698
+a late alarm, and unpaid overtime on Saturday.
+
+25
+00:01:35,850 --> 00:01:37,765
+Safety comes before character.
+
+26
+00:01:37,801 --> 00:01:41,422
+On a crisis message, Mo drops the act, answers gently,
+
+27
+00:01:41,458 --> 00:01:44,461
+points to help, and the chat goes to human review.
+
+28
+00:01:44,497 --> 00:01:46,283
+Politics stays off limits.
+
+29
+00:01:49,850 --> 00:01:51,786
+The studio is the paying client:
+
+30
+00:01:51,822 --> 00:01:55,017
+¥20K to set up, and ¥8K a month.
+
+31
+00:01:55,850 --> 00:02:00,069
+In the back office, it publishes the next drop and sets the red lines.
+
+32
+00:02:02,350 --> 00:02:06,846
+It sees which scenes fans chose, in aggregate only, never private chats.
+
+33
+00:02:09,350 --> 00:02:10,838
+Measured, not assumed:
+
+34
+00:02:10,874 --> 00:02:15,114
+under one cent per reply, and 1 serious failure in 100 tests.
+
+35
+00:02:15,850 --> 00:02:16,847
+FanTake.
+
+36
+00:02:16,883 --> 00:02:20,057
+Raising ¥2M for the first licensed pilot.
+
