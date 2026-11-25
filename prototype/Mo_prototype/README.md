@@ -39,7 +39,7 @@ Each reply costs a fraction of a cent on most providers.
 
 - Long-press any message to translate it (English ↔ Chinese).
 - The tour steps use recorded replies so the story always plays the same way; only free chat goes to the model.
-- 8 free chats a day; moving the story to the next day resets them.
+- 60 AI chats a month (RMB 29 tier); story beats and Mo's scheduled messages do not count.
 
 ## Troubleshooting
 

@@ -575,7 +575,7 @@ function applyLang(){
 function t(zh,en){return lang==="en"?en:zh}
 
 /* ---------- state ---------- */
-const S={clock:"Day 1 · 18:00",act:["刚下班","Just off shift"],hint:["一天里最愿意聊的时候","the hour he's most willing to chat"],alive:42,quota:8,chats:0,sighs:12,
+const S={clock:"Day 1 · 18:00",act:["刚下班","Just off shift"],hint:["一天里最愿意聊的时候","the hour he's most willing to chat"],alive:42,quota:60,chats:0,sighs:12,
   mem:[{zh:"怕黑（上周说的）",en:"afraid of the dark (said last week)"},{zh:"在奶茶店打工（上周说的）",en:"works at a milk-tea shop (said last week)"}],stubs:[],ach:{first:false,week:false,night:false},posts:["sheet","poster1"],diary:[{day:"Day 0",zh:"海报做好了。我觉得很有品味。",en:"Finished the poster. I think it has taste."},{day:"Day 0",zh:"眼镜是装的。显得我在认真练。",en:"The glasses are for show. Makes me look like I practise."}],poster:false,cur:0,done:new Set()};
 const $=id=>document.getElementById(id);
 const chat=$("chat");
@@ -594,7 +594,7 @@ function toast(msg){const el=$("toast");el.textContent=msg;el.classList.add("on"
 function renderStreak(){const n=S.streak||1;["streakHome","streakChat","streakLobby"].forEach(id=>{const e=$(id);if(!e)return;e.className="streak"+(n<3?" dim":"");e.innerHTML=`<i></i>${t("打卡 "+n+" 天","Day "+n+" streak")}`;
     e.title=t("每天和他说上一句话就算打卡。每周自动有 1 天“请假”，不会断；断了也不扣任何东西。","Any message counts as a check-in. One automatic day off per week; breaking it costs nothing.")})}
 function openLobby(){$("lobby").classList.add("on");renderStreak()}
-function setClock(c,act,hint){const nd=+((/Day (\d+)/.exec(c)||[])[1]||0),od=+((/Day (\d+)/.exec(S.clock||"")||[])[1]||0);if(nd>od&&od){S.quota=8;setTimeout(renderQuota)}S.clock=c;const dm=/Day (\d+)/.exec(c);if(dm){S.streak=Math.max(S.streak||1,+dm[1]);renderStreak()}$("clock").textContent=c;if(act)S.act=act;if(hint)S.hint=hint;renderHome()}
+function setClock(c,act,hint){const nd=+((/Day (\d+)/.exec(c)||[])[1]||0),od=+((/Day (\d+)/.exec(S.clock||"")||[])[1]||0);S.clock=c;const dm=/Day (\d+)/.exec(c);if(dm){S.streak=Math.max(S.streak||1,+dm[1]);renderStreak()}$("clock").textContent=c;if(act)S.act=act;if(hint)S.hint=hint;renderHome()}
 function tierOf(v){return v<30?["活人微死","Barely alive"]:v<70?["上班的活人","Working-but-alive"]:["活过来了","Fully alive"]}
 function bump(d){S.alive=Math.max(0,Math.min(100,S.alive+d));renderHome()}
 function heartbeat(v){const amp=v<30?4:v<70?12:19;let p=[],x=0;while(x<=220){p.push([x,22]);x+=18;p.push([x,22]);p.push([x+4,22-amp]);p.push([x+8,22+amp*0.7]);p.push([x+12,22]);x+=12}return p.map(a=>a.join(",")).join(" ")}
@@ -610,8 +610,8 @@ function renderHome(){
   $("diary").innerHTML=`<div class="tape"></div>${rows}<div class="sign">${t("—— 阿墨。别偷看。","— Mo. Don't read this.")}</div>`;S.diaryNew=false;
 }
 function diary(zh,en){const day=(S.clock||"Day 1").split("·")[0].trim();if(S.diary.some(e=>e.zh===zh))return;S.diary.push({day,zh,en});S.diaryNew=true;renderHome();flagTab("home")}
-function renderQuota(){const out=S.quota<=0;$("inp").disabled=out;$("send").disabled=out;$("stkBtn").disabled=out;$("inp").placeholder=out?t("今天的免费对话用完了 · 明天 07:30 重置（剧情和他的主动消息照常）","Free chats used up · resets 07:30 tomorrow (story and his messages continue)"):t("说点什么…","Say something…");
-  $("quota").textContent=t(`今日免费对话：剩 ${S.quota} / 8 轮 · 长按消息可翻译`,`Free chats today: ${S.quota} / 8 left · long-press a message to translate`)}
+function renderQuota(){const out=S.quota<=0;$("inp").disabled=out;$("send").disabled=out;$("stkBtn").disabled=out;$("inp").placeholder=out?t("本月 AI 对话已用完 · 下月 1 日重置（剧情和他的主动消息照常）","AI chats used up this month · resets on the 1st (story and his messages continue)"):t("说点什么…","Say something…");
+  $("quota").textContent=t(`本月 AI 对话：剩 ${S.quota} / 60 次 · 长按消息可翻译`,`AI chats this month: ${S.quota} / 60 left · long-press a message to translate`)}
 
 /* ---------- chat primitives ---------- */
 const SRC={lib:["固定台词 · 脚本库（0 成本）","src_lib"],ai:["AI 实测输出 · qwen3.8-max","src_ai"],fix:["固定台词（经审核）","src_fix"],ph:["AI 实测输出 · 按话题匹配","src_ph"],live:["AI 实时生成 · qwen3.8-max","src_live"],cl:["AI 实时生成 · Claude（在线版）","src_cl"]};
@@ -624,7 +624,7 @@ const ZH2EN={"17:59。最漫长的一分钟。": "17:59. The longest minute.", "
 const REVZ={};
 function L(x){if(!CHAT_EN||typeof x!=="string")return x;return x.split("||").map(p=>{const k=p.trim();const e=ZH2EN[k];if(e)REVZ[e]=k;return e||k}).join("||")}
 const NICK=CHAT_EN?"Xiaolu":"小鹿";
-function setTime(c){const nd=+((/Day (\d+)/.exec(c)||[])[1]||0),od=+((/Day (\d+)/.exec(S.clock||"")||[])[1]||0);if(nd>od&&od){S.quota=8;renderQuota()}S.clock=c;$("clock").textContent=c;const dm=/Day (\d+)/.exec(c);if(dm)S.streak=Math.max(S.streak||1,+dm[1]);renderHome();renderStreak()}
+function setTime(c){const nd=+((/Day (\d+)/.exec(c)||[])[1]||0),od=+((/Day (\d+)/.exec(S.clock||"")||[])[1]||0);S.clock=c;$("clock").textContent=c;const dm=/Day (\d+)/.exec(c);if(dm)S.streak=Math.max(S.streak||1,+dm[1]);renderHome();renderStreak()}
 function tick(min){const m=/Day (\d+) · (\d+):(\d+)/.exec(S.clock||"");if(!m)return;let d=+m[1],t2=+m[2]*60+ +m[3]+min;if(t2>=1440){t2-=1440;d++}const c=`Day ${d} · ${String(Math.floor(t2/60)).padStart(2,"0")}:${String(t2%60).padStart(2,"0")}`;setTime(c);
   if(!S.lastLabel||t2-S.lastLabel>=5||t2<S.lastLabel){time(c)}}
 function time(txt){const tm=/^(Day \d+ · (\d+):(\d+))/.exec(txt);if(tm){S.clock=tm[1];$("clock").textContent=tm[1];S.lastLabel=+tm[2]*60+ +tm[3];renderHome()}const d=document.createElement("div");d.className="time";d.textContent=txt;chat.appendChild(d);scroll()}
